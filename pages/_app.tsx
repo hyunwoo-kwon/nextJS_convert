@@ -1,20 +1,19 @@
-import NavBar from "../components/NavBar";
 import "../styles/globals.css"
+import {Component} from "react";
+import type {AppProps} from "next/app";
+import Layout from "../components/Layout";
+import NavBar from "../components/NavBar";
+import {useRouter} from "next/router";
 
-// @ts-ignore
-export default function App({ Component, pageProps }){
+export default function MyApp({ Component, pageProps }: AppProps){
+    // console.log("Component = "  + Component)
+    // console.log("pageProps = " + JSON.stringify(pageProps))
+
+
     return (
-        <div>
-            <NavBar />
-            <Component {...pageProps}/>
-            <span>_app.tsx hello</span>
-            {/* eslint-disable-next-line react/no-unknown-property */}
-            <style jsx>{`
-                  a {
-                    color: white;
-                  }
-`               }
-            </style>
-        </div>
+        <>
+            <Layout/>
+            <Component {...pageProps} />
+        </>
     )
 }
