@@ -9,12 +9,27 @@ export default function NavBar(){
     return (
         <nav>
             <Link href="/">
-                <a>Home</a>
+                <a className={router.pathname === "/" ? "active" : ""}>Home</a>
             </Link>
             <Link href="/about">
-                <a>about</a>
+                <a className={router.pathname === "/about" ? "active" : ""}>about</a>
             </Link>
-            <style></style>
+            {
+                //스타일은 html tag
+            }
+            {/*style jsx plugin installed*/}
+            {/* eslint-disable-next-line react/no-unknown-property */}
+            <style jsx>{`
+                nav {
+                    background-color: tomato;
+                }
+                a {
+                    text-decoration: none;
+                }
+                .active {
+                    color: yellow;
+                }
+            `}</style>
         </nav>
     )
 }
