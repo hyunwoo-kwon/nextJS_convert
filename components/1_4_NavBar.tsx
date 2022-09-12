@@ -9,12 +9,11 @@ export default function NavBar(){
     return (
         <nav>
             <Link href="/">
-                <a>Home</a>
+                <a className={`${style.link} ${router.pathname === "/" ? style.active : ""}`}>Home</a>
             </Link>
             <Link href="/about">
-                <a>about</a>
+                <a className={[style.link, router.pathname === "/about" ? style.active : ""].join("")}>about</a>
             </Link>
-            <style></style>
         </nav>
     )
 }
